@@ -1,0 +1,33 @@
+{% extends "base.html"%}
+{% block content%}
+<!doctype html>
+<html>
+<h1>NEW BLOGS</h1>
+<form action= '/blog' method = "POST">
+    <label>Title of Your Blog:
+    <br/>
+    <input type = "text" name = "title">
+    {%if title_error != '' %}
+    <p>{{title_error}}</p>
+    {%endif%}
+    </label>
+    <br/><br/>
+    <label>Create Your Blog:
+    <br/>
+    <input name = "blog" > <!--style="width:540" --> 
+    {%if blog_error != '' %}
+    <p>{{blog_error}}</p>
+    {%endif%}
+    <!--</textarea>-->
+    </label>
+    
+    
+    <br/><br/>
+    <label>Submit Blog:
+    <input type = "submit" value = "Add Blog">
+    </label>
+</form>
+
+</html>
+
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+<a href ="/blog">Main Page </a>
+<br/>
+<a href ="/newpost">Add a Blog Entry</a>
+<h1>Build a Blog </h1>
+{%if blogs|length == 0%}
+<p>Be the first to create a Blog!</p>
+{%else%}
+<ul>
+    {%for i in range(titles|length)%}
+    <h1>{{titles[i].title}} </h1>
+    <hr/>
+    <p>{{blogs[i].blog}}</p>
+    {%endfor%}
+</ul>
+{%endif%}
+{%endblock%}
