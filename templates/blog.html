@@ -1,18 +1,27 @@
 {% extends "base.html" %}
 
 {% block content %}
+<style>
+    .MAIN {
+        text-align:center;
+    }
+    p {
+        font-size:18pt;
+    }
+</style>
 <a href ="/blog">Main Page </a>
 <br/>
-<a href ="/newpost">Add a Blog Entry</a>
-<h1>Build a Blog </h1>
+<a href ="/newpost">Add a Blog Entry </a> 
+<h1 class="MAIN"> Build a Blog </h1>
 {%if blogs|length == 0%}
 <p>Be the first to create a Blog!</p>
 {%else%}
 <ul>
-    {%for i in range(titles|length)%}
-    <h1>{{titles[i].title}} </h1>
+    {%for blog in blogs%}
+    <h1><a href="/blog?id={{blog.id}}">{{blog.title}}</a> </h1>
+    
+    <p>{{blog.blog}}</p>
     <hr/>
-    <p>{{blogs[i].blog}}</p>
     {%endfor%}
 </ul>
 {%endif%}

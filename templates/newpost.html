@@ -3,20 +3,24 @@
 <!doctype html>
 <html>
 <h1>NEW BLOGS</h1>
-<form action= '/blog' method = "POST">
+
+<form action = "/newpost" method = "POST">
     <label>Title of Your Blog:
     <br/>
-    <input type = "text" name = "title">
-    {%if title_error != '' %}
-    <p>{{title_error}}</p>
+     
+    <input type = "text" name = "title" value = "{{title}}"  default = ''>
+    
+    {%if title_error!= '' %}
+   <p >{{title_error}}</p>
     {%endif%}
+
     </label>
     <br/><br/>
     <label>Create Your Blog:
     <br/>
-    <input name = "blog" > <!--style="width:540" --> 
-    {%if blog_error != '' %}
-    <p>{{blog_error}}</p>
+    <input name = "blog" default = '' value = "{{blog}}">
+    {%if blog_error!= '' %}
+    <p >{{blog_error}}</p>
     {%endif%}
     <!--</textarea>-->
     </label>
@@ -26,6 +30,7 @@
     <label>Submit Blog:
     <input type = "submit" value = "Add Blog">
     </label>
+ 
 </form>
 
 </html>
