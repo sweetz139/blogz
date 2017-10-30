@@ -1,5 +1,6 @@
 {% extends "base.html"%}
 {% block content%}
+
 <!doctype html>
 <html>
 <h1>NEW BLOGS</h1>
@@ -18,11 +19,11 @@
     <br/><br/>
     <label>Create Your Blog:
     <br/>
-    <input name = "blog" default = '' value = "{{blog}}">
+    <!--placeholder="Just start typing whatever comes to mind!"-->
+    <textarea  cols="50" rows="10" type="textarea" name = "blog" default = '' value = "{{blog}}"></textarea>
     {%if blog_error!= '' %}
     <p >{{blog_error}}</p>
     {%endif%}
-    <!--</textarea>-->
     </label>
     
     

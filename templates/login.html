@@ -1,0 +1,41 @@
+{%extends "base.html"%}
+
+{%block content%}
+{%with messages = get_flashed_messages(with_categories=True)%}
+<ul>
+    {%for category,message in messages %}
+        <li  class="{{category}}">{{message}}</li>
+    {%endfor%}
+</ul>
+{%endwith%}
+
+<h1>Login In:</h1>
+<form method = "POST">
+    <label>Username:
+    <input class ="login" type = "text" name = "username" value = {{username}}>
+    </label>
+    <br/><br/>
+    <label>Password:
+    <input class = "login" type = "password" name = "password">
+    </label>
+    <br/><br/>
+    <label>Submit:
+    <input type="submit">
+    </label>
+    <br/>
+    Don't have a account?<a href="/signup">Create One!</a>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+{%endblock%}

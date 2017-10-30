@@ -2,11 +2,20 @@
 <html>
     <head>
         <title>{{title}}</title>
-    </head>
+</head> 
 
 <body>
-    {% block content %}
+    <div>
+        <a href='/logout'>log out </a>
+        <a href='/login'>login</a>
+    </div>
+
     
+    <a href="/">home</a>   &nbsp;
+    <a href="/blog">all posts </a>  &nbsp;
+    <a href="/newpost">new post</a>
+
+    {% block content %}
     {% endblock %}
 
 </body>

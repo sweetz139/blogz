@@ -1,8 +1,7 @@
 {%extends "base.html" %}
 
 {%block content%}
-<a href ="/blog">Main Page </a><br/>
-<a href = "/newpost">Add a Blog Entry </a>
+
 <style>
 h1 {
     text-align:center;
@@ -13,6 +12,7 @@ h1 {
 
 
 <p>{{ind_blog.blog}} </p>
+written  <a = href="/blog?user={{ind_blog.owner.username}}">{{ind_blog.owner.username}}</a>
 
 
 
